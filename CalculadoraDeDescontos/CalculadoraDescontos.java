@@ -7,7 +7,7 @@ public class CalculadoraDescontos {
         System.out.println("====================");
         // Altere o valor da variável abaixo para realizar testes.
         double precoProduto;
-        precoProduto = 200;
+        precoProduto = 200; //jkljsdçfkljsdfjsd
         System.out.println("O preço do produto é de "
                 + precoProduto + " reais");
         double percentualDesconto = 10.0;
