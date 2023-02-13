@@ -10,7 +10,7 @@ public class CalculadoraDescontos {
         precoProduto = 200; //jkljsdçfkljsdfjsd
         System.out.println("O preço do produto é de "
                 + precoProduto + " reais");
-        double percentualDesconto = 10.0;
+        double percentualDesconto = 10.0; // fiz outro comentário
         percentualDesconto = 20;
         System.out.println("O desconto será de "
                 + percentualDesconto + "%.");
