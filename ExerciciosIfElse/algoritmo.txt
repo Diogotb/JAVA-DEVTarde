@@ -1,0 +1,8 @@
+Exercicio 1- Algoritmo
+    1. ler a primeira variável(valor1);
+    2. ler a segunda variável(valor2);
+    3. se valor1>valor2 - entao{
+        Escreva (o valor1 é maior);
+        } senão{
+            Escreva (o valor2 é maior);
+        }
