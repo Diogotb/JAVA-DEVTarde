@@ -6,3 +6,20 @@ Exercicio 1- Algoritmo
         } senão{
             Escreva (o valor2 é maior);
         }
+
+Exercicio 2 - Algoritmo
+    1. Ler o Ano de Nascimento;
+    2. Calcular a idade do usuário
+    3. se idade>=16 - então{
+        Escreva pode votar
+    } senão{
+        Escreva não pode votar
+    }
+
+Exercicio 3 - Algoritmo
+    1. Ler a senha digitada;
+    2. se senha==1234 - então{
+        Acesso Permitido
+    } senão{
+        Acesso Negado
+    }
