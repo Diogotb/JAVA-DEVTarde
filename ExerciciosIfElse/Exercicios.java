@@ -139,21 +139,22 @@ public class Exercicios {
         System.out.println("Seu peso idel é " + pesoIdeal + " Kg");
 
     }
+
     // exe7 - ler 2 notas e a frequencia de um aluno
     // calcular a média
     // se media > 50 e frequencia > 70- aluno aprovado
     public void exercicio7() {
         System.out.println("Informe a 1ª nota do aluno:");
-        int nota1= sc.nextInt();
+        int nota1 = sc.nextInt();
         System.out.println("informe a 2ª notado aluno:");
-        int nota2 = sc. nextInt();
-        int media = (nota1+nota2)/2;
-        System.out.println("a Média do aluno é "+media);
+        int nota2 = sc.nextInt();
+        int media = (nota1 + nota2) / 2;
+        System.out.println("a Média do aluno é " + media);
         System.out.println("Informe a frequencia do aluno:");
         int frequencia = sc.nextInt();
-        if(media>=50 && frequencia>=75){
+        if (media >= 50 && frequencia >= 75) {
             System.out.println("Aluno Aprovado");
-        }else{
+        } else {
             System.out.println("Aluno Reprovado");
         }
     }
