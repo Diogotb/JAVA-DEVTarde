@@ -6,3 +6,58 @@ Exercicio 1- Algoritmo
         } senão{
             Escreva (o valor2 é maior);
         }
+
+Exercicio 2 - Algoritmo
+    1. Ler o Ano de Nascimento;
+    2. Calcular a idade do usuário
+    3. se idade>=16 - então{
+        Escreva pode votar
+    } senão{
+        Escreva não pode votar
+    }
+
+Exercicio 3 - Algoritmo
+    1. Ler a senha digitada;
+    2. se senha==1234 - então{
+        Acesso Permitido
+    } senão{
+        Acesso Negado
+    }
+
+Exercicio 4 - Algoritmo
+    1. ler nº de Maçãs;
+    2. se nº de Maçãs <12{
+        Valor Maçãs = R$0,30
+    } senao{
+        Valor Maçãs = R$0,25
+    }
+    3. Total Compra = nº Maçãs * Valor Maçãs;
+    4. Mostre o Total Compra;
+
+Exercicio 5 - Algoritmo
+    1. ler 1º valor
+    2. ler 2º valor
+    3. ler 3º valor
+    se (v1<v2<v3)entao{
+        mostre v1 , v2 , v3
+    } senao se( v1<v3<v2) então{
+        mostre v1, v3, v2
+    } senão se (v2<v1<v3) entao{
+        mostre v2, v1, v3
+    } senao se( v2<v3<v1) entao{
+        mostre v2, v3, v1
+    } senao se(v3<v1<v3) entao{
+        mostre v3, v1, v2
+    } senao{
+        mostre v3, v2, v1
+    }
+
+Exercicio 6 - Algoritmo
+    1. ler a altura do usuario
+    2. ler o sexo do usuario
+    3. se sexo == 1.Feminino entao{
+        calcular peso Ideal feminino
+    } senao entao{
+        calular peso ideal masculino
+    }
+    4. mostrar peso idela usuário
