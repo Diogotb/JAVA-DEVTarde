@@ -1,0 +1,13 @@
+Exercicio 6 - 10 alunos com 4 notas, 
+contar o nº de media >7
+    1. criar um vetor nº de alunos(10 posições)
+        criar um novo vetor nº de notas(4 posições) 
+    2. criar um laço para entrada de dado dos alunos
+        a. criar um novo laço para entrada das notas
+        b. calcular a média das notas
+        c. se média >7 contar
+    3. imprimir o contador
+
+    ... sala10_Esp...
+
+    senha: LABHardware10
