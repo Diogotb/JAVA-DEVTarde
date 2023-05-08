@@ -62,7 +62,7 @@ public class ExercicioFor {
     public void exercicio4e() {
         System.out.println("Digite uma Palavra:");
         String palavra = sc.next();
-        palavra.toLowerCase();
+        palavra = palavra.toLowerCase();
         int cont=0;
         for (int i = 0; i < palavra.length(); i++) {
             char c = palavra.charAt(i);
@@ -97,8 +97,8 @@ public class ExercicioFor {
     // Exercicio 5 com contador
     public void exercicio5e() {
         int vetorNumeros[]=new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
-        int contImpar=0;
-        int contPar=0;
+        int contImpar=0;//contador de nº impares do vetor
+        int contPar=0;//contador de nº pares do
         //contando quanto nº para e quantos nº impares
         for (int i = 0; i < vetorNumeros.length; i++) {
             if(vetorNumeros[i]%2==0){
@@ -111,16 +111,59 @@ public class ExercicioFor {
         int vetorPar[] = new int[contPar];
         int vetorImpar[] = new int[contImpar];
         //distribuindo os valores nos vetores
-        contImpar=0;
-        contPar=0;
+        contImpar=0;//zera o contador
+        contPar=0;// zerar o contador
         for (int i = 0; i < vetorNumeros.length; i++) {
             if(vetorNumeros[i]%2==0){
                 vetorPar[contPar]=vetorNumeros[i];
-                contPar++;
+                contPar++;//conta o nº de item par 
             }else{
                 vetorImpar[contImpar]=vetorNumeros[i];
-                contImpar++;
+                contImpar++;//conta o nº de item impar
             }
         }
+        //imprimir o vetores
+        for (int i = 0; i < vetorNumeros.length; i++) {
+            System.out.println("vetor["+i+"]="
+                        +vetorNumeros[i]);
+        }
+        for (int i = 0; i < vetorPar.length; i++) {
+            System.out.println("vetorPar["+i+"]="
+                        +vetorPar[i]);
+        }
+        for (int i = 0; i < vetorImpar.length; i++) {
+            System.out.println("vetorImpar["+i+"]="
+                        +vetorImpar[i]);
+        }
+
+    }
+    public void exercicio6() {
+        //laço dentro de laço
+        // vetor média dos alunos e vetor notas
+        double alunos[] = new double[10];//esse vai receber as medias
+        double notas[] = new double[4];// esse vai receber as notas
+        //laço para receber a média do aluno
+        int cont=0;
+        for(int i=0;i<alunos.length;i++){
+            //laço para receber as notas
+            for(int j=0;j<notas.length;j++){
+                System.out.println("Digite a nota "+(j+1)+" do aluno "+(i+1)+":");
+                notas[j]=sc.nextDouble();
+                alunos[i]+=notas[j];//acumular as notas do aluno i
+            }
+            alunos[i]/=notas.length;//calcula a média dividindo pelo nº de notas
+            //conta o nº de alunos com nota>7
+            if(alunos[i]>=7){
+                cont++;
+            }
+
+        }
+        //imprimir as médias
+        for (int i = 0; i < alunos.length; i++) {
+            System.out.println(" a média do aluno "+(i+1)
+                +" é "+alunos[i]);
+        }
+        //imprimir o contador
+        System.out.println("o nº de alunos com nota >=7 é "+cont);
     }
 }
