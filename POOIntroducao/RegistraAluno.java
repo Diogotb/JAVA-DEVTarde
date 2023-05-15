@@ -54,8 +54,8 @@ public class RegistraAluno {
     }
 
     // define ou altera o endereço do estudante
-    public void setIdade(int temp) {
-        idade = temp;
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     // define ou altera o endereço do estudante
