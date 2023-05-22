@@ -16,7 +16,7 @@ public class MatrizExemplo {
             for (int j = 0; j < 9; j++) {
                 // laço vai preencher a 2º dimensão da matriz
                 //System.out.print("tab["+i+"]["+j+"]=");
-                tab[i][j]=rd.nextInt(1,9);//preencher o valor na posição               
+                tab[i][j]=rd.nextInt(9);//preencher o valor na posição               
             }          
         }
         //Imprimir a minha matriz
@@ -74,7 +74,7 @@ public class MatrizExemplo {
             //precorrer as linhas
             for (int j = 0; j < matriz.length; j++) {
                 //percorrer as colunas da linha
-                matriz[i][j]=rd.nextInt(1,10);
+                matriz[i][j]=rd.nextInt(10);
             }
         }
         System.out.println("+++++++++++++++++++++++++++++");
