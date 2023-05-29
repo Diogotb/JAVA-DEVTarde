@@ -1,9 +1,10 @@
 package POOIntroducao;
 
-public class Pessoas {
+public abstract class Pessoas {
     //atributios
     protected String nome;
     protected String endereco;
+    String rg;
     
     //métodos
     public String getNome() {
@@ -18,5 +19,8 @@ public class Pessoas {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+    public abstract String getRg();
+    
+    public abstract void setRg(String rg    );
     
 }

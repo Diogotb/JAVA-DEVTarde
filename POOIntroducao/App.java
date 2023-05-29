@@ -10,6 +10,16 @@ public class App {
         RegistraAluno ana = new RegistraAluno();
         RegistraAluno beto = new RegistraAluno();
         RegistraAluno carlos = new RegistraAluno();
+        Alunos aluno1 = new Alunos();
+        //Pessoas pessoa1 = new Pessoas(); não pode instanciar objeto
+        // classe pessoas é abstract
+
+        //objeto aluno1 - classe alunos
+        aluno1.setEndereco(null);
+        aluno1.setNome(null);
+
+        //objeto pessoa1 - classe Pessoas
+        //pessoa1.setEndereco(null);
         
         //altera as informações com o set
         ana.setNome("Ana Machado");

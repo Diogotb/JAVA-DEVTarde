@@ -12,5 +12,13 @@ public class Alunos extends Pessoas {
     public void setNota(int nota) {
         this.nota = nota;
     }
+
+    public Alunos(int nota) {
+        this.nota = nota;
+    }
+
+    public Alunos() {
+    }
+    
     
 }
