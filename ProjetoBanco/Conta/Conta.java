@@ -6,14 +6,7 @@ public abstract class Conta {
     double saldo;
     int numeroConta;
     //métodos
-    //construtores
-    public Conta(String nome, double saldo, int numeroConta) {
-        this.nome = nome;
-        this.saldo = saldo;
-        this.numeroConta = numeroConta;
-    }
-    public Conta() {
-    }
+    //construtor default
     //get and set
     public String getNome() {
         return nome;
