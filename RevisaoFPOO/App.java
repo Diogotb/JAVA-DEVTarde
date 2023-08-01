@@ -113,6 +113,7 @@ class App {
                                 agendamentos[contAgenda].setData(dataAgenda);
                                 agendamentos[contAgenda].setHora(horaAgenda);
                                 contAgenda++;
+                                break;
                             }
                         }
                     } else {
