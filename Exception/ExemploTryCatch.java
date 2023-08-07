@@ -19,7 +19,7 @@ public class ExemploTryCatch {
                 } else if(i==1){//sub
                     JOptionPane.showMessageDialog(null, "O resultado é \n"
                         + (n1 - n2));
-                } else if(i==2){//soma
+                } else if(i==2){//multi
                     JOptionPane.showMessageDialog(null, "O resultado é \n"
                         + (n1 * n2));
                 }  else if(i==3){//divi
@@ -28,15 +28,15 @@ public class ExemploTryCatch {
                 } else{
                     corrija = false;
                 }
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e1){
                 JOptionPane.showMessageDialog(null, "ERRO - Valor "
                         + "digitado não é um número inteiro!");
-            } catch (ArithmeticException e){
+            } catch (ArithmeticException e2){
                 JOptionPane.showMessageDialog(null, "ERRO - Aritmético "
                         + "Não Dividirás por Zero!!!");
-            } catch (Exception e) {
+            } catch (Exception e3) {
                 // TODO: handle exception
-                JOptionPane.showMessageDialog(null, "ERRO - Valor"1.5);
+                JOptionPane.showMessageDialog(null, "ERRO - Valor");
             }
         }
     }
