@@ -18,11 +18,18 @@ public class ExemploThrow {
                 if(senha.equals(login)){
                     throw new Exception("Senha = Login");
                 }
+                if(senha.contains(dataNascimento)){
+                    throw new Exception("Senha = Data de Nascimento");
+                    }
+                if(senha.contains("123") || senha.contains("abc")){
+                    throw new Exception("Senha Fraca!!!");
+                }         
                 tenteNovamente = false;
                 JOptionPane.showMessageDialog(null, "Senha Cadastrada com Sucesso", "senha", 1);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Senha", 0);
             }
+            // senha.contains([a-z]) || senha.contains([A-Z])
         }
     }
 }
