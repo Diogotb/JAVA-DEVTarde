@@ -25,7 +25,7 @@ public class ExemploArrayList {
 }
     public void imprimir(){
         for (int i = 0; i < v1.length; i++) {
-            System.out.println(v1[i]);
+            System.out.println("valor="+v1[i]);
         }
     }
 }
