@@ -6,8 +6,8 @@ public class ExemploThrow {
     public static void main(String[] args) {
         boolean tenteNovamente = true;
         String senha, login, dataNascimento;
-        String senhaLower=".*[a-z]+.*";
-        String senhaUpper=".*[A-Z]+.*";
+        String senhaLower=".*[a-z].*";
+        String senhaUpper=".*[A-Z].*";
         while (tenteNovamente) {
             try {
                 login = JOptionPane.showInputDialog("Informe un login");
@@ -23,7 +23,7 @@ public class ExemploThrow {
                 if(senha.contains(dataNascimento)){
                     throw new Exception("Senha = Data de Nascimento");
                     }
-                if(!senha.matches(senhaUpper)){
+                if(!senha.matches(senhaUpper) || !senha.matches(senhaLower)){
                     throw new Exception("Senha Fraca!!!Usar letras lower");
                 }
                 if(!senha.matches(senhaLower)){
