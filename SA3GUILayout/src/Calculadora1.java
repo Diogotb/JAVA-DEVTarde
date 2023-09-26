@@ -5,5 +5,6 @@ public class Calculadora1 extends JPanel {
     public Calculadora1() {
         super();
         this.add(new JLabel("Calculadora 1"));
+        this.setSize(400, 400);
     }
 }
