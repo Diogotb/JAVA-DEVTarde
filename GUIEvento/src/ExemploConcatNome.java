@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ExemploConcatNome extends JFrame{
+    //atributos
+    private JTextField caixaNome, caixaSobrenome;
+    private JLabel nomeSobrenome;
     //construtor
     public ExemploConcatNome() {
         super("Exemplo 1 - Evento");
@@ -16,14 +19,14 @@ public class ExemploConcatNome extends JFrame{
         this.add(mainP);//add mainP ao frame
         //add elementos/componentes ao Painel
         mainP.add(new JLabel("Nome: "));
-        JTextField caixaNome = new JTextField();
+        caixaNome = new JTextField();
         mainP.add(caixaNome);
         mainP.add(new JLabel("Sobrenome: "));
-        JTextField caixaSobrenome = new JTextField();
+        caixaSobrenome = new JTextField();
         mainP.add(caixaSobrenome);
         JButton botao = new JButton("Enviar");
         mainP.add(botao);
-        JLabel nomeSobrenome = new JLabel();
+        nomeSobrenome = new JLabel();
         mainP.add(nomeSobrenome);
         //Set do Frame
         this.setDefaultCloseOperation(2);
@@ -36,12 +39,31 @@ public class ExemploConcatNome extends JFrame{
         //     caixaSobrenome.setText("");
         // }); 
         //tratamento de Evento Normal
-        botao.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        // botao.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent e) {
+        //     nomeSobrenome.setText(caixaNome.getText()+" "+caixaSobrenome.getText());
+        //     caixaNome.setText("");
+        //     caixaSobrenome.setText("");
+        //     }});
+            //chamar o handler(construtor)
+        Handler evt = new Handler();
+        botao.addActionListener(evt);
+    }
+    //classe handler vai ser cirada fora do construtor
+    /**
+     * Handler
+     */
+    public class Handler implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
             nomeSobrenome.setText(caixaNome.getText()+" "+caixaSobrenome.getText());
             caixaNome.setText("");
             caixaSobrenome.setText("");
-            }});
-    }
+        }
     
+        
+    }
+        //Tratamento por Handler(manipulador)
+        // criar a classe handler
 }
