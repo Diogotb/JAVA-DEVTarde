@@ -30,7 +30,7 @@ public class TodoList extends JFrame {
         // Configuração da janela principal
         super("To-Do List App");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(450, 400);
+        this.setSize(500, 400);
 
         // Inicializa o painel principal
         mainPanel = new JPanel();
@@ -69,21 +69,80 @@ public class TodoList extends JFrame {
         // Adiciona o painel principal à janela
         this.add(mainPanel);
 
-        //Tratamento de Eventos da Aplicação (vocês)
+        // Tratamento de Eventos da Aplicação (vocês)
+        addButton.addActionListener(e->{
+            addTask();
+        });
     }
-    //métodos
-    public void run(){
-        //tornar a janela(frame visivel)
-        this.setVisible(true);
-    }
+
+    // métodos
     private void addTask() {
         // Adiciona uma nova task à lista de tasks
         String taskDescription = taskInputField.getText().trim();//remove espaços vazios
         if (!taskDescription.isEmpty()) {
         Task newTask = new Task(taskDescription);
         tasks.add(newTask);
-        updateTaskList();//atualiza a JscrollPane
+        updateTaskList();
         taskInputField.setText("");
         }
         }
+
+    private void deleteTask() {
+        // Exclui a task selecionada da lista de tasks
+        int selectedIndex = taskList.getSelectedIndex();
+        if (selectedIndex >= 0 && selectedIndex < tasks.size()) {
+            tasks.remove(selectedIndex);
+            updateTaskList();
+        }
+    }
+
+    private void markTaskDone() {
+        // Marca a task selecionada como concluída
+        int selectedIndex = taskList.getSelectedIndex();
+        if (selectedIndex >= 0 && selectedIndex < tasks.size()) {
+            Task task = tasks.get(selectedIndex);
+            task.setDone(true);
+            updateTaskList();
+        }
+    }
+
+    private void filterTasks() {
+        // Filtra as tasks com base na seleção do JComboBox
+        String filter = (String) filterComboBox.getSelectedItem();
+        listModel.clear();
+        for (Task task : tasks) {
+            if (filter.equals("Todas") || (filter.equals("Ativas") &&
+                    !task.isDone()) || (filter.equals("Concluídas") && task.isDone())) {
+                listModel.addElement(task.getDescription());
+            }
+        }
+    }
+
+    private void clearCompletedTasks() {
+        // Limpa todas as tasks concluídas da lista
+        List<Task> completedTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.isDone()) {
+                completedTasks.add(task);
+            }
+        }
+        tasks.removeAll(completedTasks);
+        updateTaskList();
+    }
+
+    private void updateTaskList() {
+        // Atualiza a lista de tasks exibida na GUI
+        listModel.clear();
+        for (Task task : tasks) {
+            listModel.addElement(task.getDescription() + (task.isDone() ?
+
+                    " (Concluída)" : ""));
+
+        }
+    }
+
+    public void run() {
+        // Exibe a janela
+        this.setVisible(true);
+    }
 }
