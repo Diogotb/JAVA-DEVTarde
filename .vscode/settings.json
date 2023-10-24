@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "SA4TodoListApp/src",
+        "GUIEvento/src",
+        "GUICard&Tabs/src"
+    ]
+}

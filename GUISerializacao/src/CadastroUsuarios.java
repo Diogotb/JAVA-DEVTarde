@@ -1,5 +1,8 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+
+
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,20 +12,16 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CadastroUsuarios extends JFrame {
+public class CadastroUsuarios extends JPanel {
     private JTextField inputNome;
     private JTextField inputIdade;
     private DefaultTableModel tableModel;
     private JTable table;
-    private List<Usuario> usuarios = new ArrayList<>();
+    public List<Usuario> usuarios = new ArrayList<>();
     private int linhaSelecionada = -1;
 
     public CadastroUsuarios() {
-        setTitle("Cadastro de Usuários");
-        setSize(600, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
+        
         tableModel = new DefaultTableModel();
         tableModel.addColumn("Nome");
         tableModel.addColumn("Idade");
@@ -52,12 +51,14 @@ public class CadastroUsuarios extends JFrame {
         setLayout(new BorderLayout());
         add(inputPanel, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
-
+        
         File arquivo = new File("dados.txt");
+        List<Usuario> usuarios = new ArrayList<>();
         if (arquivo.exists()) {
             usuarios = Serializacao.deserializar("dados.txt");
             atualizarTabela();
         }
+        
 
         table.addMouseListener(new MouseAdapter() {
             @Override
@@ -112,13 +113,11 @@ public class CadastroUsuarios extends JFrame {
 
     private void atualizarTabela() {
         tableModel.setRowCount(0);
+        
         for (Usuario usuario : usuarios) {
             tableModel.addRow(new Object[] { usuario.getNome(), usuario.getIdade() });
         }
     }
-    public void run(){
-        pack();
-        setVisible(true);
-    }
+    
 
 }
