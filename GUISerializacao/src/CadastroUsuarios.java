@@ -116,5 +116,9 @@ public class CadastroUsuarios extends JFrame {
             tableModel.addRow(new Object[] { usuario.getNome(), usuario.getIdade() });
         }
     }
+    public void run(){
+        pack();
+        setVisible(true);
+    }
 
 }
