@@ -22,6 +22,13 @@ public class CadastroUsuarios extends JPanel {
 
     public CadastroUsuarios() {
         
+        File arquivo = new File("dados.txt");
+        List<Usuario> usuarios = new ArrayList<>();
+        if (arquivo.exists()) {
+            usuarios = Serializacao.deserializar("dados.txt");
+            atualizarTabela();
+        }
+
         tableModel = new DefaultTableModel();
         tableModel.addColumn("Nome");
         tableModel.addColumn("Idade");
@@ -52,12 +59,7 @@ public class CadastroUsuarios extends JPanel {
         add(inputPanel, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
         
-        File arquivo = new File("dados.txt");
-        List<Usuario> usuarios = new ArrayList<>();
-        if (arquivo.exists()) {
-            usuarios = Serializacao.deserializar("dados.txt");
-            atualizarTabela();
-        }
+        
         
 
         table.addMouseListener(new MouseAdapter() {

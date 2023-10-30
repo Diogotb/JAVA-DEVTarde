@@ -29,4 +29,28 @@ public class Serializacao {
             return null; // Retorna nulo para indicar que ocorreu um erro
         }
     }
+    public static void serializarAgendamento(String arquivoAgendamento, List<Agendamento> agendamentos) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(arquivoAgendamento))) {
+            // Escreve a lista de usuários no arquivo especificado
+            outputStream.writeObject(agendamentos);
+            System.out.println("Dados do Agendamento serializados com sucesso.");
+        } catch (IOException e) {
+            // Em caso de erro na serialização, imprime a mensagem de erro
+            System.err.println("Erro ao serializar os dados: " + e.getMessage());
+        }
+    }
+
+    // Método para deserializar uma lista de usuários a partir de um arquivo binário
+    public static List<Agendamento> deserializarAgendamento(String arquivoAgendamento) {
+        try {
+            // Abre o arquivo para leitura
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(arquivoAgendamento));
+            // Lê a lista de usuários do arquivo e a converte de volta para a lista
+            return (List<Agendamento>) inputStream.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            // Em caso de erro na deserialização, imprime a mensagem de erro
+            System.err.println("Erro ao deserializar os dados: " + e.getMessage());
+            return null; // Retorna nulo para indicar que ocorreu um erro
+        }
+    }
 }
