@@ -15,9 +15,10 @@ public class Main {
             Connection c = DriverManager.getConnection(url, usuario, senha); // Estabelece a conexão com o banco de dados.
             s = c.createStatement(); // Cria um objeto Statement a partir da conexão.
 
+            
             // Executa uma consulta SQL de inserção na tabela "CONTATO".
             // O SQL utilizado está incorreto, pois os valores '1', 'NOME' e 'EMAIL' devem ser substituídos pelos valores reais a serem inseridos.
-            s.executeQuery("INSERT INTO CONTATO VALUES(2, 'DIOGO', 'digogo@gmail.com')");
+            s.executeQuery("INSERT INTO contato VALUES(2, 'DIOGO', 'digogo@gmail.com')");
 
             c.close(); // Fecha a conexão com o banco de dados após a conclusão da operação.
 

@@ -1,4 +1,6 @@
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -8,15 +10,13 @@ public class App {
             String usuario = "postgres"; // Nome de usuário do banco de dados.
             String senha = "postgres"; // Senha do banco de dados.
             String url = "jdbc:postgresql://localhost:5432/postgres"; // URL de conexão com o banco de dados PostgreSQL.
-
-            Connection c = DriverManager.getConnection(url, usuario, senha); // Estabelece a conexão com o banco de
-                                                                             // dados.
+            // Estabelece a conexão com o banco de dados.
+            Connection c = DriverManager.getConnection(url, usuario, senha); 
             s = c.createStatement(); // Cria um objeto Statement a partir da conexão.
 
-            // Executa uma consulta SQL de inserção na tabela "CONTATO".
-    
+            // Executa uma codigo SQL de inserção na tabela "contato".
             // ser substituídos pelos valores reais a serem inseridos.
-            s.executeQuery("INSERT INTO CONTATO VALUES('3', 'DIOGO', 'digogo@gmail.com')");
+            s.execute("INSERT INTO contato VALUES('id', 'nome', 'email')");
 
             c.close(); // Fecha a conexão com o banco de dados após a conclusão da operação.
 
