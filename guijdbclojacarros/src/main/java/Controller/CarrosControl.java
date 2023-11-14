@@ -30,8 +30,22 @@ public class CarrosControl {
         for (Carros carro : carros) {
             // Adiciona os dados de cada carro como uma nova linha na tabela Swing
             tableModel.addRow(new Object[] { carro.getMarca(), carro.getModelo(),
-
                     carro.getAno(), carro.getPlaca(), carro.getValor() });
         }
+    }
+    //método Cadastrar
+    public void cadastrar(String marca, String modelo, String ano, String placa, String valor){
+        new CarrosDAO().cadastrar(marca, modelo, ano, placa, valor);
+        atualizarTabela();
+    }
+    //método Apagar
+    public void apagar(String placa){
+        new CarrosDAO().apagar(placa);
+        atualizarTabela();
+    }
+    //métodos Atualizar pela Placa
+    public void atualizar(String marca, String modelo, String ano, String placa, String valor){
+        new CarrosDAO().atualizar(marca, modelo, ano, placa, valor);
+        atualizarTabela();
     }
 }

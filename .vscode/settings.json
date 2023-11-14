@@ -3,5 +3,6 @@
         "SA4TodoListApp/src",
         "GUIEvento/src",
         "GUICard&Tabs/src"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
