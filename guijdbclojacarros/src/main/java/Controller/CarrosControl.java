@@ -3,6 +3,7 @@ package Controller;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -35,21 +36,35 @@ public class CarrosControl {
                     carro.getAno(), carro.getPlaca(), carro.getValor() });
         }
     }
-    //método Cadastrar
-    public void cadastrar(String marca, String modelo, String ano, String placa, String valor){
-        new CarrosDAO().cadastrar(marca, modelo, ano, placa, valor);
-        new RegistrosSistemas().registrarOperacao("Cadastro do Carro "+marca+" "+modelo+" "+placa
-            +" Cadastrado com sucesso");
-        atualizarTabela();
+
+    // método Cadastrar
+    public void cadastrar(String marca, String modelo, String ano, String placa, String valor) {
+        try {
+            if (Integer.parseInt(valor) < 0 || Integer.parseInt(valor) > 1000000) {
+                System.out.println("Valor incorreto");
+            } else if (Integer.parseInt(ano) > 2025 || Integer.parseInt(ano) < 1950) {
+                System.out.println("valor incorreto");
+            } else {
+                new CarrosDAO().cadastrar(marca, modelo, ano, placa, valor);
+                new RegistrosSistemas().registrarOperacao("Cadastro do Carro " + marca + " " + modelo + " " + placa
+                        + " Cadastrado com sucesso");
+                atualizarTabela();
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(table, e);
+        }
 
     }
-    //método Apagar
-    public void apagar(String placa){
+
+    // método Apagar
+    public void apagar(String placa) {
         new CarrosDAO().apagar(placa);
         atualizarTabela();
     }
-    //métodos Atualizar pela Placa
-    public void atualizar(String marca, String modelo, String ano, String placa, String valor){
+
+    // métodos Atualizar pela Placa
+    public void atualizar(String marca, String modelo, String ano, String placa, String valor) {
         new CarrosDAO().atualizar(marca, modelo, ano, placa, valor);
         atualizarTabela();
     }
