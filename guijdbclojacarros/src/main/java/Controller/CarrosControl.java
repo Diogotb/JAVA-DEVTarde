@@ -1,5 +1,6 @@
 package Controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.swing.JTable;
@@ -7,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 
 import Connection.CarrosDAO;
 import Model.Carros;
+import logs.RegistrosSistemas;
 
 public class CarrosControl {
     // atributos
@@ -36,7 +38,10 @@ public class CarrosControl {
     //método Cadastrar
     public void cadastrar(String marca, String modelo, String ano, String placa, String valor){
         new CarrosDAO().cadastrar(marca, modelo, ano, placa, valor);
+        new RegistrosSistemas().registrarOperacao("Cadastro do Carro "+marca+" "+modelo+" "+placa
+            +" Cadastrado com sucesso");
         atualizarTabela();
+
     }
     //método Apagar
     public void apagar(String placa){
